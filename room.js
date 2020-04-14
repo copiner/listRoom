@@ -150,40 +150,42 @@ function listRoom(tutor, session){
         return;
         
     }
-    let temp = 0;
+    
 
-    while(session.length != 0){
-        temp += 1;
-        
-        let result = [];
-        for(let i=0; i<tutor.length; i++){
-            for(let j=0; j<session.length;j++){
-                if(tutor[i].level != session[i][0]){
-                    if(!tutor[i].temp){
-                        tutor[i].temp = 0;
-                    }
-                    if(tutor[i].temp < tutor[i].limit){
-                        if(!session[j].substring(3).indexOf(tutor[i].supOut)){
-                            tutor[i].temp += 1;
-                            result.push(session[j]+" : "+tutor[i].id);
-                            session.splice(j,1);
-                            j--;
-                        }
+    let result = [];
+    let i;
+    for(i=0; i<tutor.length; i++){
+
+        for(let j=0; j<session.length;j++){
+            if(tutor[i].level != session[i][0]){
+                if(!tutor[i].temp){
+                    tutor[i].temp = 0;
+                }
+                if(tutor[i].temp < tutor[i].limit){
+                    if( !tutor[i].supOut.indexOf(session[j].substring(3)) ){
+                        tutor[i].temp += 1;
+                        result.push(session[j]+" : "+tutor[i].id);
+                        session.splice(j,1);
+                        j--;
                     }
                 }
             }
         }
 
-        return result;
-    
+        console.log(session.length);
+
+        if(i==tutor.length-1 && session.length != 0){
+            i = 0;
+        }
     }
-    
-    
+
+    return result;
+        
 }
 
 let list =  listRoom(tutor, session);
 
 for (let i = 0; i<list.length; i++){
-    console.log(list[i]+"|");
+//    console.log(list[i]);
 }
 
