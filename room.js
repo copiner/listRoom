@@ -1,142 +1,14 @@
-
-let tutor =
-[{
-    id:'001',
-    name:'xjx',
-    type:'01',
-    typeName:'Chinese',
-    level:6,
-    limit:5,
-    status:1,
-    supOut:['01'],
-    subOut:[],
-    other:'nice'
-    
-},{
-    id:'002',
-    name:'xjx',
-    type:'02',
-    typeName:'Math',
-    level:6,
-    limit:5,
-    status:1,
-    supOut:['02'],
-    subOut:[],
-    other:'nice'
-    
-},{
-    id:'003',
-    name:'xjx',
-    type:'03',
-    typeName:'English',
-    level:7,
-    limit:5,
-    status:1,
-    supOut:['03'],
-    subOut:[],
-    other:'nice'
-    
-},{
-    id:'004',
-    name:'xjx',
-    type:'04',
-    typeName:'Science',
-    level:7,
-    limit:5,
-    status:1,
-    supOut:['04'],
-    subOut:[],
-    other:'nice'
-    
-},{
-    id:'005',
-    name:'xjx',
-    type:'05',
-    typeName:'Society',
-    level:7,
-    limit:5,
-    status:0,
-    supOut:['05'],
-    subOut:[],
-    other:'nice'
-    
-},{
-    id:'006',
-    name:'xjx',
-    type:'01',
-    typeName:'Chinese',
-    level:6,
-    limit:5,
-    status:1,
-    supOut:['01'],
-    subOut:[],
-    other:'nice'
-    
-},{
-    id:'007',
-    name:'xjx',
-    type:'02',
-    typeName:'Math',
-    level:6,
-    limit:5,
-    status:1,
-    supOut:['02'],
-    subOut:[],
-    other:'nice'
-    
-},{
-    id:'008',
-    name:'xjx',
-    type:'03',
-    typeName:'English',
-    level:6,
-    limit:5,
-    status:1,
-    supOut:['03'],
-    subOut:[],
-    other:'nice'
-    
-},{
-    id:'009',
-    name:'xjx',
-    type:'04',
-    typeName:'Science',
-    level:7,
-    limit:5,
-    status:1,
-    supOut:['04'],
-    subOut:[],
-    other:'nice'
-    
-},{
-    id:'010',
-    name:'xjx',
-    type:'05',
-    typeName:'Society',
-    level:7,
-    limit:5,
-    status:0,
-    supOut:['05'],
-    subOut:[],
-    other:'nice'
-    
-}]
-
-let room = [
-    '601','602','603','604','605',
-    '701','702','703','704','705'     
-]
-
-let type = ['01','02','03','04','05']
+let { tutor,room,course } = require("./db");
 
 let session = [];
 
 for(let i=0; i<room.length; i++){
-    for(let j=0; j<type.length;j++){
-        session.push(room[i]+type[j]);
+    for(let j=0; j<course.length;j++){
+        session.push(room[i]+course[j]);
     }
 }
 
+//console.log(...session);
 
 function listRoom(tutor, session){
     let tol = 0;
@@ -150,42 +22,55 @@ function listRoom(tutor, session){
         return;
         
     }
-    
 
+    for(let i=0; i<tutor.length; i++){
+        tutor[i].count = 0;
+    }
+//    console.log(...tutor);
+    
     let result = [];
-    let i;
-    for(i=0; i<tutor.length; i++){
+    let i = 0;
+
+    while(tutor.length > 0 &&  session.length > 0){
+
+    for(let i=0; i<tutor.length; i++){
 
         for(let j=0; j<session.length;j++){
-            if(tutor[i].level != session[i][0]){
-                if(!tutor[i].temp){
-                    tutor[i].temp = 0;
-                }
-                if(tutor[i].temp < tutor[i].limit){
-                    if( !tutor[i].supOut.indexOf(session[j].substring(3)) ){
-                        tutor[i].temp += 1;
-                        result.push(session[j]+" : "+tutor[i].id);
+
+        if(tutor[i].count < 5){
+            
+                if(tutor[i].grade != session[j][0]){
+                
+                    if(tutor[i].course != session[j].substring(3)){
+                        tutor[i].count += 1;
+                        result.push(session[j] + tutor[i].id);
                         session.splice(j,1);
-                        j--;
+                        j = j>0 ? j-- : 0;
                     }
                 }
-            }
+          
+
+        } else {
+            tutor.splice(i,1);
+            i = i>0 ? i-- : 0;
+            //i = 0;
         }
 
-        console.log(session.length);
-
-        if(i==tutor.length-1 && session.length != 0){
-            i = 0;
-        }
+      }
+   
     }
 
+    }
+    
     return result;
         
 }
 
-let list =  listRoom(tutor, session);
+let list = listRoom(tutor, session);
 
-for (let i = 0; i<list.length; i++){
-//    console.log(list[i]);
-}
+console.log(list.length);
 
+console.log(...list);
+
+//console.log(...tutor)
+console.log(...session);
