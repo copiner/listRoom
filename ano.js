@@ -6,7 +6,12 @@ let session = [];
 
 for(let i=0; i<room.length; i++){
     for(let j=0; j<course.length;j++){
-        session.push(room[i]+course[j]);
+        session.push({
+          exam:room[i]+course[j],
+          grade:room[i][0],
+          course:course[j],
+          valid:true
+        });
     }
 }
 
@@ -47,45 +52,36 @@ function listRoom(tutor, session){
     let result = [];
     let i = 0, j = 0, c = 0;
 
-    while(tutor.length > 0 && session.length > 0 && c < 20){
-
+    while(c < 30){
+      //console.log(tutor.length, session.length)
       c++;
 
       for(i=0; i<tutor.length; i++){
 
         for(j=0; j<session.length;j++){
 
-          if(tutor[i]){
-
             if(tutor[i].count < tutor[i].limit){
 
-              if(tutor[i].grade != session[j][0]){
+              if( tutor[i].grade != session[j].grade ){
 
                   if(
-                      tutor[i].supOut.indexOf(session[j].substring(session[j].length-2)) == '-1'
-                      && tutor[i].subOut.indexOf(session[j]) == '-1'
+                      tutor[i].supOut.indexOf(session[j].course) == '-1'
+                      && tutor[i].subOut.indexOf(session[j].exam) == '-1'
 
                     ){
                       tutor[i].count += 1;
-                      result.push( tutor[i].id +' --> '+ session[j]);
-                      session.splice(j,1);
-                      j = j>0 ? j-- : 0;
-                  }
+                      result.push( tutor[i].id +' --> '+ session[j].exam );
+                      session[j].valid = false;
+                    }
 
               }
-
-            } else {
-                //console.log(i, tutor[i].count, tutor[i].limit)
-                tutor.splice(i,1);
-                i = i>0 ? i-- : 0;
-            }
-          }
 
         }
 
       }
 
 
+    }
 
    }
 
@@ -131,7 +127,7 @@ if(list){
 
 }
 
-console.log(...tutor);
+//console.log(...tutor);
 
-console.log(session.length)
+//console.log(session.length)
 console.log(...session);
