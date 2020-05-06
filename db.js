@@ -6,24 +6,24 @@ exports.tutor =
     course:'01',
     courseName:'Chinese',
     grade:6,
-    limit:5,
+    limit:4,
     status:1,
     supOut:['01'],
     subOut:[],
     other:'nice'
-    
+
 },{
     id:'002',
     name:'xjx',
     course:'02',
     courseName:'Math',
     grade:6,
-    limit:5,
+    limit:6,
     status:1,
     supOut:['02'],
-    subOut:[],
+    subOut:['70303'],
     other:'nice'
-    
+
 },{
     id:'003',
     name:'xjx',
@@ -35,7 +35,7 @@ exports.tutor =
     supOut:['03'],
     subOut:[],
     other:'nice'
-    
+
 },{
     id:'004',
     name:'xjx',
@@ -47,7 +47,7 @@ exports.tutor =
     supOut:['04'],
     subOut:[],
     other:'nice'
-    
+
 },{
     id:'005',
     name:'xjx',
@@ -55,11 +55,11 @@ exports.tutor =
     courseName:'Society',
     grade:6,
     limit:5,
-    status:0,
+    status:1,
     supOut:['05'],
     subOut:[],
     other:'nice'
-    
+
 },{
     id:'006',
     name:'xjx',
@@ -71,7 +71,7 @@ exports.tutor =
     supOut:['01'],
     subOut:[],
     other:'nice'
-    
+
 },{
     id:'007',
     name:'xjx',
@@ -83,7 +83,7 @@ exports.tutor =
     supOut:['02'],
     subOut:[],
     other:'nice'
-    
+
 },{
     id:'008',
     name:'xjx',
@@ -95,39 +95,37 @@ exports.tutor =
     supOut:['03'],
     subOut:[],
     other:'nice'
-    
+
 },{
     id:'009',
     name:'xjx',
     course:'04',
     courseName:'Science',
     grade:7,
-    limit:5,
+    limit:8,
     status:1,
     supOut:['04'],
     subOut:[],
     other:'nice'
-    
+
 },{
     id:'010',
     name:'xjx',
     course:'05',
     courseName:'Society',
     grade:7,
-    limit:5,
-    status:0,
+    limit:2,
+    status:1,
     supOut:['05'],
-    subOut:[],
+    subOut:['60303'],
     other:'nice'
-    
+
 }]
 
 
 exports.room = [
     '601','602','603','604','605',
-    '701','702','703','704','705'     
+    '701','702','703','704','705'
 ]
 
 exports.course = ['01','02','03','04','05']
-
-
