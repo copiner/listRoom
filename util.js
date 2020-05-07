@@ -86,7 +86,7 @@ const shuffle = (arr) => {
 };
 
 const foo = [1, 2, 3];
-console.log(shuffle(foo)); // [2,3,1]
+//console.log(shuffle(foo)); // [2,3,1]
 
 let temp = JSON.stringify('1');//deepcopy
 
