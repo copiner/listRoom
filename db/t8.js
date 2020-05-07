@@ -37,7 +37,7 @@ module.exports =
     limit:5,
     status:1,
     supOut:['03'],
-    subOut:[],
+    subOut:['70102'],
     other:'nice'
 
 },{
