@@ -91,3 +91,20 @@ console.log(shuffle(foo)); // [2,3,1]
 let temp = JSON.stringify('1');//deepcopy
 
 // for(let v of tu){}
+
+
+//补零满足12位
+function compt(){
+  let arr1 = [1,3,5,7,9,7];
+  let arr2 = new Array(12-arr1.length);
+  arr2.fill('0')
+  arr = [...arr2,...arr1]
+  console.log(...arr)
+  return arr;
+}
+
+
+function commpt(bits, identifier, value) {
+    value = Array(bits + 1).join(identifier) + value;
+    return value.slice(-bits);
+}
