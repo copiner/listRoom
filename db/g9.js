@@ -1,0 +1,108 @@
+/*
+name: class
+course 01:Chinese 02:Math 03:English 04:Science 05:Society
+grade : grade 9
+*/
+module.exports =
+[{//901--------------------
+  name:'901',
+  grade:'9',
+  course:'01'
+},{
+  name:'901',
+  grade:'9',
+  course:'02'
+},{
+  name:'901',
+  grade:'9',
+  course:'03'
+},{
+  name:'901',
+  grade:'9',
+  course:'04'
+},{
+  name:'901',
+  grade:'9',
+  course:'05'
+},//902--------------------
+{
+  name:'902',
+  grade:'9',
+  course:'01'
+},{
+  name:'902',
+  grade:'9',
+  course:'02'
+},{
+  name:'902',
+  grade:'9',
+  course:'03'
+},{
+  name:'902',
+  grade:'9',
+  course:'04'
+},{
+  name:'902',
+  grade:'9',
+  course:'05'
+},{//903--------------------
+  name:'903',
+  grade:'9',
+  course:'01'
+},{
+  name:'903',
+  grade:'9',
+  course:'02'
+},{
+  name:'903',
+  grade:'9',
+  course:'03'
+},{
+  name:'903',
+  grade:'9',
+  course:'04'
+},{
+  name:'903',
+  grade:'9',
+  course:'05'
+},{//904--------------------
+  name:'904',
+  grade:'9',
+  course:'01'
+},{
+  name:'904',
+  grade:'9',
+  course:'02'
+},{
+  name:'904',
+  grade:'9',
+  course:'03'
+},{
+  name:'904',
+  grade:'9',
+  course:'04'
+},{
+  name:'904',
+  grade:'9',
+  course:'05'
+},{//905--------------------
+  name:'905',
+  grade:'9',
+  course:'01'
+},{
+  name:'905',
+  grade:'9',
+  course:'02'
+},{
+  name:'905',
+  grade:'9',
+  course:'03'
+},{
+  name:'905',
+  grade:'9',
+  course:'04'
+},{
+  name:'905',
+  grade:'9',
+  course:'05'
+}]

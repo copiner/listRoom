@@ -1,0 +1,108 @@
+/*
+name: class
+course 01:Chinese 02:Math 03:English 04:Science 05:Society
+grade : grade 7
+*/
+module.exports =
+[{//701--------------------
+  name:'701',
+  grade:'7',
+  course:'01'
+},{
+  name:'701',
+  grade:'7',
+  course:'02'
+},{
+  name:'701',
+  grade:'7',
+  course:'03'
+},{
+  name:'701',
+  grade:'7',
+  course:'04'
+},{
+  name:'701',
+  grade:'7',
+  course:'05'
+},//702--------------------
+{
+  name:'702',
+  grade:'7',
+  course:'01'
+},{
+  name:'702',
+  grade:'7',
+  course:'02'
+},{
+  name:'702',
+  grade:'7',
+  course:'03'
+},{
+  name:'702',
+  grade:'7',
+  course:'04'
+},{
+  name:'702',
+  grade:'7',
+  course:'05'
+},{//703--------------------
+  name:'703',
+  grade:'7',
+  course:'01'
+},{
+  name:'703',
+  grade:'7',
+  course:'02'
+},{
+  name:'703',
+  grade:'7',
+  course:'03'
+},{
+  name:'703',
+  grade:'7',
+  course:'04'
+},{
+  name:'703',
+  grade:'7',
+  course:'05'
+},{//704--------------------
+  name:'704',
+  grade:'7',
+  course:'01'
+},{
+  name:'704',
+  grade:'7',
+  course:'02'
+},{
+  name:'704',
+  grade:'7',
+  course:'03'
+},{
+  name:'704',
+  grade:'7',
+  course:'04'
+},{
+  name:'704',
+  grade:'7',
+  course:'05'
+},{//705--------------------
+  name:'705',
+  grade:'7',
+  course:'01'
+},{
+  name:'705',
+  grade:'7',
+  course:'02'
+},{
+  name:'705',
+  grade:'7',
+  course:'03'
+},{
+  name:'705',
+  grade:'7',
+  course:'04'
+},{
+  name:'705',
+  grade:'7',
+  course:'05'
+}]
