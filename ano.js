@@ -19,13 +19,27 @@ let tutor = [...t6, ...t7, ...t8, ...t9];
 
 let exam = [], k = 0;
 
-while(k<3){
+while(true){
   k++;
   if(exam.length < session.length){
     exam = list(tutor, session);
     session = shuffle(session);
+  } else {
+    break;
   }
 }
+
+console.log(k)
+
+// while(k < 2020){
+//   k++;
+//   if(exam.length < session.length){
+//     exam = list(tutor, session);
+//     session = shuffle(session);
+//   } else {
+//     break;
+//   }
+// }
 
 
 
