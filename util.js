@@ -1,34 +1,36 @@
-exports.print = function(tutor,session,exam){
+exports.print = function(tutor,exam){
 
-  let eo = {};
+  let tu = Object.keys(tutor);
 
-  for(let i = 0; i<tutor.length;i++){
-    if(tutor[i].count<tutor[i].limit){
-      console.log(tutor[i]);//uncomplete tutor
-    }
-    eo[tutor[i].grade+tutor[i].id] = [];
-  }
+  // console.log(tu);
+  //console.log(exam);
 
+  let temp = {};
 
-  for(let i = 0; i<session.length;i++){
-    if(session[i].valid){
-      console.log(session[i]);//uncomplete exam
-    }
+  for(let t of tu){
+    temp[t] = [];
   }
 
   for(let i = 0; i<exam.length;i++){
 
-    for(let j in eo){
-      if( exam[i].substring(0,4)== j ){
-        eo[j].push(exam[i]);
+    for(let t of tu){
+      if( exam[i].split('|')[0] == t ){
+        temp[t].push(exam[i]);
       }
     }
 
   }
 
-  for(let i in eo){
-    console.log(...eo[i]);
+  //console.log(temp)
+
+  for(let k in temp){
+    console.log(...temp[k])
   }
+
+  // for(let t of tu){
+  //   console.log(...temp[t])
+  // }
+
 
 }
 
@@ -92,7 +94,6 @@ let temp = JSON.stringify('1');//deepcopy
 
 // for(let v of tu){}
 
-
 //补零满足12位
 function compt(){
   let arr1 = [1,3,5,7,9,7];
@@ -108,3 +109,26 @@ function commpt(bits, identifier, value) {
     value = Array(bits + 1).join(identifier) + value;
     return value.slice(-bits);
 }
+
+let obj = {
+   [Symbol('name')]: 'me',
+   age: 18,
+   title: 'Engineer'
+}
+
+// Object.keys(obj)   // ['age', 'title']
+//
+// for (let p in obj) {
+//    console.log(p)   // 'age' 和 'title'
+// }
+//
+// Object.getOwnPropertyNames(obj)   // ['age', 'title']
+
+// for(let i in tutor){
+//   tutor[i]
+// }
+//
+// for(let v of tutor){
+//   if(v.grade != )
+// }
+// symbol('001')
